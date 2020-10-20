@@ -1,0 +1,7 @@
+
+curl --location --request GET 'http://localhost:8081/MavenApp-0.0.1-SNAPSHOT/api/student/11'
+
+curl --location --request POST 'http://localhost:8081/MavenApp-0.0.1-SNAPSHOT/api/student' \
+--header 'Content-Type: application/json' \
+--data-raw '{​​​​​​​​"rollNo": 11, "name":"Arun Gupta1", "totalMarks":5671}​​​​​​​​'
+
