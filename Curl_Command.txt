@@ -33,6 +33,16 @@ pipeline {
 
 
 
+ <proxies>
+    <proxy>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>http://proxy</host>
+      <port>8080</port>
+      <nonProxyHosts>maven</nonProxyHosts>
+    </proxy>
+  </proxies>
+
 
 <mirror>
   <id>central-secure</id>
