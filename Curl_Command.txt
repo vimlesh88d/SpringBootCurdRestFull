@@ -30,3 +30,12 @@ pipeline {
         }
     }
 }
+
+
+
+
+<mirror>
+  <id>central-secure</id>
+  <url>https://repo.maven.apache.org/maven2</url>
+  <mirrorOf>central</mirrorOf>
+</mirror>
