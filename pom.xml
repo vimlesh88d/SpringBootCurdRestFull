@@ -75,12 +75,11 @@
 	</dependencies>
 	<repositories>
 
-   	 <repository>
-        	<id>central</id>
-        	<name>Central Repository</name>
-        	<url>https://repo.maven.apache.org/maven2</url>
-        	<layout>default</layout>
-    	</repository>
+   <repository>
+     <id>central</id>
+     <name>central repo m2</name>
+     <url>http://central.maven.org/maven2</url>
+</repository>
 
 	</repositories>
 
