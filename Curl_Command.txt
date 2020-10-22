@@ -52,6 +52,9 @@ pipeline {
 
 
 
-
-
-vv
+<mirror>
+<id>Repository</id>
+<name>Maven Repository</name>
+<url>https://repo.maven.apache.org/maven2</url>
+<mirrorOf>central</mirrorOf>
+</mirror>
