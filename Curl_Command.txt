@@ -5,3 +5,28 @@ curl --location --request POST 'http://localhost:8081/MavenApp-0.0.1-SNAPSHOT/ap
 --header 'Content-Type: application/json' \
 --data-raw '{​​​​​​​​"rollNo": 11, "name":"Arun Gupta1", "totalMarks":5671}​​​​​​​​'
 
+---------------------------
+pipeline {
+    agent any    
+
+    stages {
+        stage('Env Setup') {
+            steps {
+                echo "PATH is: $PATH"
+            }
+        }
+    
+    stage('Checkout') {
+            steps {
+                git url: 'https://github.com/koddas/war-web-project.git'
+            }
+        }
+        
+        stage('Install') 
+        {
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+    }
+}
