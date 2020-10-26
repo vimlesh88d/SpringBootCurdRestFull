@@ -61,3 +61,38 @@ pipeline {
 
 
 https://devopsntt.atlassian.net/jira/software/projects/DEP/boards/1
+
+
+Running script
+pipeline{
+    agent any
+    tools{
+        maven 'M2_HOME'
+        jdk 'JDK1.8'
+    }
+stages{
+    stage("Clone Code"){
+    steps{
+       git "https://github.com/vimlesh88d/SpringBootCurdRestFull.git"
+    }
+        
+    }
+        stage("Build"){
+    steps{
+         bat "mvn clean install"
+    }
+        
+    }
+    stage("Test") {
+        steps{
+      junit "**/target/surefire-reports/TEST-*.xml"
+   }
+}
+        stage("Deploy"){
+    steps{
+        deploy adapters: [tomcat8(credentialsId: 'b49e544a-7bc4-4ef6-965a-8ecd6d6b7d30', path: '', url: 'http://localhost:8000/')], contextPath: 'MavenApp', war: '**/*.war'
+    }
+        
+    }
+}
+}
